@@ -1,5 +1,6 @@
 
 require("dotenv").config();       // to read and set any environment variables with the dotenv package
+var fs = require("fs");
 // var keys = require("./keys.js");  //  to import the `keys.js` file and store it in a variable
 // var spotify = new Spotify(keys.spotify); // to access your keys information
 var axios = require("axios");     // Include the axios npm package
@@ -13,6 +14,7 @@ switch (action) {
     break;
 
 }
+
 
 function concertThis() {  // bands in town 
   // Store all of the arguments in an array
@@ -53,6 +55,7 @@ function concertThis() {  // bands in town
         ].join('\n');
         //output the event block
         console.log(eventData);
+        log(eventData, artist);
       });  
       
     })
@@ -75,4 +78,14 @@ function concertThis() {  // bands in town
     console.log(error.config);
   });
 
+}
+
+function log(data, info) { // log(param1, param2) and use parameters to log the data in log.txt
+  var log = "\n" + "About: " + info + "\n" + data + "\n" + "===========" + "\n";
+  fs.appendFile("log.txt",log, function(error) {
+    if (error) {
+      return console.log(error);
+    }
+    
+  })
 }
