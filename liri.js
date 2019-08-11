@@ -21,6 +21,12 @@ switch (action) {
   case "spotify-this-song":
     spotifyThis();
     break;
+  case "movie-this":
+    movieThis();
+    break;
+  case "do-what-it-says":
+    doWhatItSays();
+    break;
 
 }
 // ________________________________
@@ -82,9 +88,9 @@ function spotifyThis() {
   var song = "";                        // Create an empty variable for holding the song name
 
   for (var i = 0; i < nodeArgs.length; i++) {   // Loop through all the words in the node argument
-    if (i > 0 && i < nodeArgs.length) {
-      song = song + "+" + nodeArgs[i];          // And do a little for-loop magic to handle the inclusion of "+"s
-    } else {
+    if (i > 0 && i < nodeArgs.length) {         // When there are more than one process.argvs for song name. 
+      song = song + "+" + nodeArgs[i];         
+    } else {                                    // When there is only one process.argv for song name. i = 0 && i < nodeArgs.length
       song += nodeArgs[i];
     }
   }
@@ -121,8 +127,7 @@ function spotifyThis() {
         ].join(' * ');
       });
 
-      // build event block
-      var trackData = [
+      var trackData = [                 // build event block
         '\n',
         'Artist (s): ' + artistsData,   // * Artist(s)
         'Song: ' + track.name,          // * The song's name
@@ -137,6 +142,70 @@ function spotifyThis() {
   .catch(function(err) {
     console.log(err);
   });
+}
+
+function movieThis() {
+  var nodeArgs = process.argv.slice(3);
+  var movieName = "";
+
+  for (var i = 0; i < nodeArgs.length; i++) {
+    if (i < 0 && i < nodeArgs.length) {
+      movieName = movieName + "+" + nodeArgs[i];
+    } else {
+      movieName += nodeArgs[i];
+    }
+  }
+
+  if (!movieName) {
+    movieName = "Mr.Nobody";
+  }
+
+  var queryURL = "https://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
+
+  axios.get(queryURL).then(
+  function(response) {
+    var movie = response.data;
+    var movieData = [
+      "\n",
+      "Title: " + movie.Title,                                      // Title of the movie
+      "Released Year: " + movie.Year,                               // Year the movie came out.
+      "IMDB Rating: " + movie.imdbRating,                           // IMDB Rating of the movie.
+      "Rotten Tomato Rating: " + JSON.stringify(movie.Ratings[1]),  // Rotten Tomatoes Rating of the movie.
+      "Country: " + movie.Country,                                  // Country where the movie was produced.
+      "Language: " + movie.Language,                                // Language of the movie.
+      "Plot of the movie: " + movie.Plot,                           // Plot of the movie.
+      "Actors: " + movie.Actors,                                    // Actors in the movie.
+    ].join("\n");                                                   // takes all of the elements in array and join them as a string. Uses "\n", new line as a separator
+      
+    console.log(movieData);
+    log(movieData, movieName);
+
+  })
+  .catch(function(error) {
+    if (error.response) {
+      // The request was made and the server responded with a status code
+      // that falls out of the range of 2xx
+      console.log("---------------Data---------------");
+      console.log(error.response.data);
+      console.log("---------------Status---------------");
+      console.log(error.response.status);
+      console.log("---------------Status---------------");
+      console.log(error.response.headers);
+    } else if (error.request) {
+      // The request was made but no response was received
+      // `error.request` is an object that comes back with details pertaining to the error that occurred.
+      console.log(error.request);
+    } else {
+      // Something happened in setting up the request that triggered an Error
+      console.log("Error", error.message);
+    }
+    console.log(error.config);
+  });
+
+}
+
+function doWhatItSays() {
+  
 }
 
 function log(data, info) { // log(param1, param2) and use parameters to log the data in log.txt
