@@ -38,7 +38,11 @@ switch (action) {
     }
     break;
   case "movie-this":
-    movieThis();
+    if (queryThis) {
+      movieThis(queryThis);
+    } else {
+      movieThis("Mr.Nobody");
+    }
     break;
   case "do-what-it-says":
     doWhatItSays();
@@ -89,6 +93,7 @@ function concertThis(artist) {        // bands in town. Take in queryThis parame
   });
   condition = false;
 }
+// ======================================================
 
 function spotifyThis(song) {
 
@@ -124,21 +129,9 @@ function spotifyThis(song) {
   });
 }
 
-function movieThis() {
-  var nodeArgs = process.argv.slice(3);
-  var movieName = "";
+// =================================================
 
-  for (var i = 0; i < nodeArgs.length; i++) {
-    if (i < 0 && i < nodeArgs.length) {
-      movieName = movieName + "+" + nodeArgs[i];
-    } else {
-      movieName += nodeArgs[i];
-    }
-  }
-
-  if (!movieName) {
-    movieName = "Mr.Nobody";
-  }
+function movieThis(movieName) {
 
   var queryURL = "https://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
 
@@ -184,6 +177,8 @@ function movieThis() {
 
 }
 
+// =================================================
+
 function doWhatItSays() {
   fs.readFile("random.txt", "utf8", function(error, data) {
     if (error) {
@@ -198,6 +193,8 @@ function doWhatItSays() {
  
   })
 }
+
+// =================================================
 
 function log(data, info) { // log(param1, param2) and use parameters to log the data in log.txt
   var log = "\n" + "About: " + info + "\n" + data + "\n" + "===========" + "\n";
