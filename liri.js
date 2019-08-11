@@ -10,16 +10,32 @@ var spotify = new Spotify(keys.spotify);    // to access your keys information
 var axios = require("axios");               // Include the axios npm package
 var moment = require("moment");
 // ________________________________
-// SWITCH
+// STORED QUERY ARGUMENTS IN ARRAY
 // ================================
 var action = process.argv[2];
+var nodeArgs = process.argv.slice(3); // Store all of the arguments in an array (nodeArgs) starting from index [3] of process.argv array
+var queryThis = "";                        // Create an empty variable for holding the queryThis name
 
+for (var i = 0; i < nodeArgs.length; i++) {   // Loop through all the words in the node argument
+  if (i > 0 && i < nodeArgs.length) {         // When there are more than one process.argvs for queryThis name. 
+    queryThis = queryThis + "+" + nodeArgs[i];         
+  } else {                                    // When there is only one process.argv for queryThis name. i = 0 && i < nodeArgs.length
+    queryThis += nodeArgs[i];
+  }
+}
+// ________________________________
+// SWITCH
+// ================================
 switch (action) {
   case "concert-this":
     concertThis();
     break;
   case "spotify-this-song":
-    spotifyThis();
+    if (queryThis) {
+      spotifyThis(queryThis);
+    } else {
+      spotifyThis("The Sign");
+    }
     break;
   case "movie-this":
     movieThis();
@@ -33,6 +49,7 @@ switch (action) {
 // FUNCTIONS
 // ================================
 function concertThis() {                      // bands in town 
+
   var nodeArgs = process.argv.slice(3);       // Store all of the arguments in an array(nodeArgs). Starts from index [3] of process.argv array
   var artist = "";                            // Create an empty variable for holding the artist name
 
@@ -80,44 +97,17 @@ function concertThis() {                      // bands in town
     }
     console.log(error.config);
   });
-
+  condition = false;
 }
 
-function spotifyThis() {
-  var nodeArgs = process.argv.slice(3); // Store all of the arguments in an array (nodeArgs) starting from index [3] of process.argv array
-  var song = "";                        // Create an empty variable for holding the song name
-
-  for (var i = 0; i < nodeArgs.length; i++) {   // Loop through all the words in the node argument
-    if (i > 0 && i < nodeArgs.length) {         // When there are more than one process.argvs for song name. 
-      song = song + "+" + nodeArgs[i];         
-    } else {                                    // When there is only one process.argv for song name. i = 0 && i < nodeArgs.length
-      song += nodeArgs[i];
-    }
-  }
-
-  // if (song === "") {
-  //   song = "The Sign";
-  //   var artist = "Ace of Base";
-  //   var id = '5UwIyIyFzkM7wKeGtRJPgB'
-  //   spotify
-  //     .request('https://api.spotify.com/v1/tracks/' + id + '/7yCPwWs66K8Ba5lFuU2bcx')
-  //     .then(function(data) {
-  //       console.log(data); 
-  //     })
-  //     .catch(function(err) {
-  //       console.error('Error occurred: ' + err); 
-  //     });
-  //   return;
-  // }
+function spotifyThis(song) {
 
  spotify
   .search({ type: 'track', query: song, limit: 10 })
   .then(function(response) {
     var tracks = response.tracks.items; //array
-    console.log(tracks);
    
     tracks.forEach(function (track) {
-
       //build artist block
       var artists = track.artists; //array
       var artistsData = [];
@@ -205,7 +195,18 @@ function movieThis() {
 }
 
 function doWhatItSays() {
-  
+  fs.readFile("random.txt", "utf8", function(error, data) {
+    if (error) {
+      console.log(error);
+    }
+    var command = data.toString().split(",");
+    var action = command[0];
+    var query = command[1];
+    console.log(action);
+    console.log(query);
+ 
+ 
+  })
 }
 
 function log(data, info) { // log(param1, param2) and use parameters to log the data in log.txt
