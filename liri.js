@@ -187,6 +187,14 @@ function doWhatItSays() {
     var command = data.toString().split(",");
     var action = command[0];
     var query = command[1];
+
+    if (action === "concert-this") {
+      concertThis(query);
+    } else if (action === "spotify-this-song") {
+      spotifyThis(query);
+    } else if (action === "movie-this") {
+      movieThis(query);
+    }
     console.log(action);
     console.log(query);
  
