@@ -5,7 +5,7 @@
 require("dotenv").config();                 // to read and set any environment variables with the dotenv package
 var fs = require("fs");
 var Spotify = require("node-spotify-api");  // Import the node-spotify-api NPM package.
-var keys = require("./keys.js");            //  to import the `keys.js` file and store it in a variable
+var keys = require("./keys.js");            // to import the `keys.js` file and store it in a variable
 var spotify = new Spotify(keys.spotify);    // to access your keys information
 var axios = require("axios");               // Include the axios npm package
 var moment = require("moment");
@@ -28,7 +28,7 @@ for (var i = 0; i < nodeArgs.length; i++) {   // Loop through all the words in t
 // ================================
 switch (action) {
   case "concert-this":
-    concertThis();
+    concertThis(queryThis);
     break;
   case "spotify-this-song":
     if (queryThis) {
@@ -48,18 +48,8 @@ switch (action) {
 // ________________________________
 // FUNCTIONS
 // ================================
-function concertThis() {                      // bands in town 
+function concertThis(artist) {        // bands in town. Take in queryThis parameter to search events of the artist declared in queryThis
 
-  var nodeArgs = process.argv.slice(3);       // Store all of the arguments in an array(nodeArgs). Starts from index [3] of process.argv array
-  var artist = "";                            // Create an empty variable for holding the artist name
-
-  for (var i = 0; i < nodeArgs.length; i++) { // Loop through all the words in the node argument
-    if (i > 0 && i < nodeArgs.length) {
-      artist = artist + "+" + nodeArgs[i];    // And do a little for-loop magic to handle the inclusion of "+"s
-    } else {
-      artist += nodeArgs[i];
-    }
-  }
   var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
   // console.log("queryURL: " + queryURL);
  
