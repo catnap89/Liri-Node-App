@@ -61,6 +61,7 @@ function concertThis(artist) {        // bands in town. Take in queryThis parame
     .get(queryURL)                    // The axios.get function takes in a URL and returns a promise (just like $.ajax)
     .then(function(response) {
       var events = response.data;     // this is array. If there are one event data it's in [0].
+      var logCommand = "concert-this"; // for log.txt
       events.forEach(function (evt) {      
         var eventData = [                                          // build event block
           '\n',
@@ -69,7 +70,7 @@ function concertThis(artist) {        // bands in town. Take in queryThis parame
           'Date: ' + moment(evt.datetime).format('L')              // Date of the Event (use moment to format this as "MM/DD/YYYY")
         ].join('\n');
         console.log(eventData);
-        log(eventData, artist);                                    // output the event block
+        log(eventData, artist, logCommand);                                    // output the event block
       });  
       
     })
@@ -100,6 +101,7 @@ function spotifyThis(song) {
   .search({ type: 'track', query: song, limit: 10 })
   .then(function(response) {
     var tracks = response.tracks.items; //array
+    var logCommand = "spotify-this-song"; // for log.txt
    
     tracks.forEach(function (track) {
       //build artist block
@@ -120,7 +122,7 @@ function spotifyThis(song) {
       ].join('\n');
 
       console.log(trackData);
-      log(trackData, song);
+      log(trackData, song, logCommand);
     });
   })
   .catch(function(err) {
@@ -137,6 +139,7 @@ function movieThis(movieName) {
   axios.get(queryURL).then(
   function(response) {
     var movie = response.data;
+    var logCommand = "movie-this"; // for log.txt
     var movieData = [
       "\n",
       "Title: " + movie.Title,                                      // Title of the movie
@@ -150,7 +153,7 @@ function movieThis(movieName) {
     ].join("\n");                                                   // takes all of the elements in array and join them as a string. Uses "\n", new line as a separator
       
     console.log(movieData);
-    log(movieData, movieName);
+    log(movieData, movieName, logCommand);
 
   })
   .catch(function(error) {
@@ -206,8 +209,16 @@ function doWhatItSays() {
 
 // =================================================
 
-function log(data, info) { // log(param1, param2) and use parameters to log the data in log.txt
-  var log = "\n" + "About: " + info + "\n" + data + "\n" + "===========" + "\n";
+function log(data, info, logCommand) { // log(param1, param2) and use parameters to log the data in log.txt
+
+  if (logCommand === "concert-this") {
+    var command = "concert-this " + info;
+  } else if (logCommand === "spotify-this-song") {
+    var command = "spotify-this-song " + info;
+  } else if (logCommand === "movie-this") {
+    var command = "movie-this " + info;
+  }
+  var log = "\n" + "Command: " + command + "\n" + data + "\n" + "===========" + "\n";
   fs.appendFile("log.txt",log, function(error) {
     if (error) {
       return console.log(error);
