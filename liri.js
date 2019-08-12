@@ -183,7 +183,7 @@ function doWhatItSays() {
     if (error) {
       console.log(error);
     }
-    var command = data.toString().split(",");
+    var command = data.split(",");
     var action = command[0];
     var query = command[1].replace("\"", "").replace("\"", "");
 
