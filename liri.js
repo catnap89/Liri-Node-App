@@ -34,7 +34,7 @@ switch (action) {
     if (queryThis) {
       spotifyThis(queryThis);
     } else {
-      spotifyThis("The Sign");
+      spotifyThis("The Sign ace of base");
     }
     break;
   case "movie-this":
@@ -91,7 +91,6 @@ function concertThis(artist) {        // bands in town. Take in queryThis parame
     }
     console.log(error.config);
   });
-  condition = false;
 }
 // ======================================================
 
@@ -186,7 +185,9 @@ function doWhatItSays() {
     }
     var command = data.toString().split(",");
     var action = command[0];
-    var query = command[1];
+    var query = command[1].replace("\"", "").replace("\"", "");
+
+    console.log(command);
 
     if (action === "concert-this") {
       concertThis(query);
@@ -195,6 +196,7 @@ function doWhatItSays() {
     } else if (action === "movie-this") {
       movieThis(query);
     }
+
     console.log(action);
     console.log(query);
  
