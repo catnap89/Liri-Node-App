@@ -66,7 +66,7 @@ LIRI also logs the result data in log.txt.
 
 ## Video of the App functioning
 Here is the link to the Youtube video of the app to show its functionality:
-[![Watch the video](https://img.youtube.com/vi/jimBos0julc/maxresdefault.jpg)](https://youtu.be/jimBos0julc)
+[![Watch the video](liri-bot_full.gif)](https://youtu.be/jimBos0julc)
 
 
 ## Tech used
