@@ -10,6 +10,8 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 
   * `do-what-it-says`
 
+LIRI also logs the result data in log.txt.
+
 ## Getting Started
 
 - Clone down repo.
