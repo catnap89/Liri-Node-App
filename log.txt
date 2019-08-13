@@ -18,6 +18,14 @@ Date: 08/16/2019
 Command: concert-this florida+georgia+line
 
 
+Venue: Hersheypark Stadium
+Location: Hershey United States
+Date: 08/17/2019
+===========
+
+Command: concert-this florida+georgia+line
+
+
 Venue: Darien Lake Amphitheater
 Location: Darien Center United States
 Date: 08/24/2019
@@ -26,17 +34,17 @@ Date: 08/24/2019
 Command: concert-this florida+georgia+line
 
 
-Venue: DTE Energy Music Theatre
-Location: Detroit United States
-Date: 08/22/2019
+Venue: Coral Sky Amphitheatre
+Location: West Palm Beach United States
+Date: 08/29/2019
 ===========
 
 Command: concert-this florida+georgia+line
 
 
-Venue: Coral Sky Amphitheatre
-Location: West Palm Beach United States
-Date: 08/29/2019
+Venue: MIDFLORIDA Credit Union Amphitheatre
+Location: Tampa United States
+Date: 08/30/2019
 ===========
 
 Command: concert-this florida+georgia+line
@@ -58,9 +66,9 @@ Date: 09/07/2019
 Command: concert-this florida+georgia+line
 
 
-Venue: MIDFLORIDA Credit Union Amphitheatre
-Location: Tampa United States
-Date: 08/30/2019
+Venue: Soaring Eagle Casino & Resort
+Location: Mount Pleasant United States
+Date: 09/08/2019
 ===========
 
 Command: concert-this florida+georgia+line
@@ -148,39 +156,15 @@ Command: concert-this florida+georgia+line
 
 Venue: Zappos Theater
 Location: Las Vegas United States
-Date: 11/08/2019
-===========
-
-Command: concert-this florida+georgia+line
-
-
-Venue: Zappos Theater
-Location: Las Vegas United States
 Date: 11/09/2019
 ===========
 
 Command: concert-this florida+georgia+line
 
 
-Venue: Blossom Music Center
-Location: Cleveland United States
-Date: 08/23/2019
-===========
-
-Command: concert-this florida+georgia+line
-
-
-Venue: Soaring Eagle Casino & Resort
-Location: Mount Pleasant United States
-Date: 09/08/2019
-===========
-
-Command: concert-this florida+georgia+line
-
-
-Venue: Hersheypark Stadium
-Location: Hershey United States
-Date: 08/17/2019
+Venue: DTE Energy Music Theatre
+Location: Detroit United States
+Date: 08/22/2019
 ===========
 
 Command: concert-this florida+georgia+line
@@ -189,6 +173,22 @@ Command: concert-this florida+georgia+line
 Venue: Zappos Theater
 Location: Las Vegas United States
 Date: 11/12/2019
+===========
+
+Command: concert-this florida+georgia+line
+
+
+Venue: Zappos Theater
+Location: Las Vegas United States
+Date: 11/08/2019
+===========
+
+Command: concert-this florida+georgia+line
+
+
+Venue: Blossom Music Center
+Location: Cleveland United States
+Date: 08/23/2019
 ===========
 
 Command: spotify-this-song thriller
@@ -204,9 +204,18 @@ Command: spotify-this-song thriller
 
 
 Artist (s): Michael Jackson
-Song: Beat It - Single Version
+Song: P.Y.T. (Pretty Young Thing)
 Album: Thriller 25 Super Deluxe Edition
-Preview URL: https://p.scdn.co/mp3-preview/4901df6e0f8bf6ce93e08df7d98a50e220c45799?cid=18c18695c97843c6804002be5db409b9
+Preview URL: https://p.scdn.co/mp3-preview/575230ca230ab7a79f1b2980e303d7f1612073f3?cid=18c18695c97843c6804002be5db409b9
+===========
+
+Command: spotify-this-song thriller
+
+
+Artist (s): Michael Jackson
+Song: Thriller
+Album: Thriller 25 Super Deluxe Edition
+Preview URL: https://p.scdn.co/mp3-preview/dd0621b7f11364a37c96031dbedbca6b88dbfa7d?cid=18c18695c97843c6804002be5db409b9
 ===========
 
 Command: spotify-this-song thriller
@@ -258,9 +267,9 @@ Command: spotify-this-song thriller
 
 
 Artist (s): Michael Jackson
-Song: Thriller
+Song: Beat It - Single Version
 Album: Thriller 25 Super Deluxe Edition
-Preview URL: https://p.scdn.co/mp3-preview/dd0621b7f11364a37c96031dbedbca6b88dbfa7d?cid=18c18695c97843c6804002be5db409b9
+Preview URL: https://p.scdn.co/mp3-preview/4901df6e0f8bf6ce93e08df7d98a50e220c45799?cid=18c18695c97843c6804002be5db409b9
 ===========
 
 Command: spotify-this-song thriller
@@ -270,15 +279,6 @@ Artist (s): Michael Jackson
 Song: Thriller
 Album: Scream
 Preview URL: https://p.scdn.co/mp3-preview/9f288fba4d3380b1ae25e7f88a2054d7fac0bf2d?cid=18c18695c97843c6804002be5db409b9
-===========
-
-Command: spotify-this-song thriller
-
-
-Artist (s): Michael Jackson
-Song: P.Y.T. (Pretty Young Thing)
-Album: Thriller 25 Super Deluxe Edition
-Preview URL: https://p.scdn.co/mp3-preview/575230ca230ab7a79f1b2980e303d7f1612073f3?cid=18c18695c97843c6804002be5db409b9
 ===========
 
 Command: spotify-this-song The Sign ace of base
@@ -410,33 +410,6 @@ Command: spotify-this-song I Want it That Way
 
 
 Artist (s): Backstreet Boys
-Song: I Want It That Way
-Album: Millennium
-Preview URL: https://p.scdn.co/mp3-preview/b8c2410a5acb68b462be6ac85f1312430e2b149c?cid=18c18695c97843c6804002be5db409b9
-===========
-
-Command: spotify-this-song I Want it That Way
-
-
-Artist (s): Mick Jensen
-Song: I Want It That Way
-Album: I Want It That Way
-Preview URL: https://p.scdn.co/mp3-preview/f8181f66713983fab073e133e23c741acbe00d75?cid=18c18695c97843c6804002be5db409b9
-===========
-
-Command: spotify-this-song I Want it That Way
-
-
-Artist (s): Anthem Lights
-Song: I Want It That Way
-Album: Covers Part IV
-Preview URL: https://p.scdn.co/mp3-preview/4a163fbfa2dbbe4433f277e0e7395dca656364f5?cid=18c18695c97843c6804002be5db409b9
-===========
-
-Command: spotify-this-song I Want it That Way
-
-
-Artist (s): Backstreet Boys
 Song: I Want It That Way - Reimagined
 Album: I Want It That Way (Reimagined)
 Preview URL: https://p.scdn.co/mp3-preview/7f612d6ba66571500e981e74bb36e14b9906be77?cid=18c18695c97843c6804002be5db409b9
@@ -487,6 +460,33 @@ Album: I Want It That Way
 Preview URL: none provided
 ===========
 
+Command: spotify-this-song I Want it That Way
+
+
+Artist (s): Backstreet Boys
+Song: I Want It That Way
+Album: Millennium
+Preview URL: https://p.scdn.co/mp3-preview/b8c2410a5acb68b462be6ac85f1312430e2b149c?cid=18c18695c97843c6804002be5db409b9
+===========
+
+Command: spotify-this-song I Want it That Way
+
+
+Artist (s): Anthem Lights
+Song: I Want It That Way
+Album: Covers Part IV
+Preview URL: https://p.scdn.co/mp3-preview/4a163fbfa2dbbe4433f277e0e7395dca656364f5?cid=18c18695c97843c6804002be5db409b9
+===========
+
+Command: spotify-this-song I Want it That Way
+
+
+Artist (s): Mick Jensen
+Song: I Want It That Way
+Album: I Want It That Way
+Preview URL: https://p.scdn.co/mp3-preview/f8181f66713983fab073e133e23c741acbe00d75?cid=18c18695c97843c6804002be5db409b9
+===========
+
 Command: movie-this Frozen
 
 
@@ -498,25 +498,4 @@ Country: USA
 Language: English, Norwegian
 Plot of the movie: When the newly-crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.
 Actors: Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad
-===========
-
-Command: concert-this BTS
-
-
-Venue: King Fahd International Stadium
-Location: Riyad Saudi Arabia
-Date: 10/11/2019
-===========
-
-Command: movie-this titanic
-
-
-Title: Titanic
-Released Year: 1997
-IMDB Rating: 7.8
-Rotten Tomato Rating: {"Source":"Rotten Tomatoes","Value":"89%"}
-Country: USA
-Language: English, Swedish, Italian
-Plot of the movie: A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.
-Actors: Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy Bates
 ===========
