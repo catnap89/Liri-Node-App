@@ -63,7 +63,8 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
     * For example: if random.txt has `spotify-this-song,"I want it That Way"`, it should run `spotify-this-song` for "I Want it That Way"
 
 ## Video of the App functioning
-[![Watch the video](https://img.youtube.com/vi/jimBos0julc/maxresdefault.jpg)][link](https://youtu.be/jimBos0julc){:target="_blank"}
+Here is the link to the Youtube video of the app to show its functionality:
+[![Watch the video](https://img.youtube.com/vi/jimBos0julc/maxresdefault.jpg)](https://youtu.be/jimBos0julc)
 
 
 ## Tech used
