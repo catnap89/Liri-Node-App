@@ -28,7 +28,12 @@ for (var i = 0; i < nodeArgs.length; i++) {   // Loop through all the words in t
 // ================================
 switch (action) {
   case "concert-this":
-    concertThis(queryThis);
+    if (queryThis) {
+      concertThis(queryThis);
+    } else {
+      console.log("Input an artist");
+    }
+    
     break;
   case "spotify-this-song":
     if (queryThis) {
@@ -47,7 +52,9 @@ switch (action) {
   case "do-what-it-says":
     doWhatItSays();
     break;
-
+  default: {
+    console.log("Please input commands such as concert-this, spotify-this-song, movie-this or do-what-it-says")
+  }
 }
 // ________________________________
 // FUNCTIONS
